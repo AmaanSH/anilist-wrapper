@@ -1,5 +1,6 @@
 import type { ANILISTSDK } from "../@types";
 import type {
+  CharacterEdge,
   GetAnimeByIdQuery,
   GetAnimeByTitleQuery,
   GetAnimeCharactersQuery,
@@ -33,6 +34,36 @@ export class AnimeService {
    */
   getAnimeById(id: number): Promise<GetAnimeByIdQuery> {
     return this.client.GetAnimeById({ id });
+  }
+
+  /**
+   * Fetches all characters for a given anime, across all available pages.
+   * @param id - The unique ID of the anime.
+   * @returns A promise resolving to a flat array of all character edges.
+   */
+  async getAllCharactersFromAnime(id: number): Promise<CharacterEdge[]> {
+    const allCharacters: CharacterEdge[] = [];
+    let currentPage = 1;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+      const result = await this.client.GetAnimeById({
+        id: id,
+        page: currentPage
+      });
+
+      const characterPage = result?.Media?.characters;
+
+      if (characterPage?.edges) {
+        const filtered = characterPage.edges.filter((edge): edge is CharacterEdge => edge !== null);
+        allCharacters.push(...filtered);
+      }
+
+      hasNextPage = characterPage?.pageInfo?.hasNextPage ?? false;
+      currentPage++;
+    }
+
+    return allCharacters;
   }
 
   /**

@@ -8,3 +8,4 @@ generates:
       - typescript-graphql-request
     config:
       rawRequest: false
+      useTypeImports: true
