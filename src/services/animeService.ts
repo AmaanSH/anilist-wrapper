@@ -47,7 +47,7 @@ export class AnimeService {
     let hasNextPage = true;
 
     while (hasNextPage) {
-      const result = await this.client.GetAnimeById({
+      const result = await this.client.GetAnimeCharacters({
         id: id,
         page: currentPage
       });

@@ -10,13 +10,10 @@ export const GET_ANIME_BY_ID = gql`
   ${STAFF_FRAGMENT}
   ${STUDIO_FRAGMENT}
 
-  query GetAnimeById($id: Int, $page: Int = 1, $perPage: Int = 25) {
+  query GetAnimeById($id: Int) {
     Media(id: $id, type: ANIME) {
       ...MediaFragment
-      characters(page: $page, perPage: $perPage) {
-        pageInfo {
-          hasNextPage
-        }
+      characters {
         edges {
           role
           node {

@@ -4693,12 +4693,10 @@ export type UserFragmentFragment = { __typename?: 'User', id: number, name: stri
 
 export type GetAnimeByIdQueryVariables = Exact<{
   id?: InputMaybe<Scalars['Int']['input']>;
-  page?: InputMaybe<Scalars['Int']['input']>;
-  perPage?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
-export type GetAnimeByIdQuery = { __typename?: 'Query', Media?: { __typename?: 'Media', id: number, description?: string | null, format?: MediaFormat | null, status?: MediaStatus | null, episodes?: number | null, chapters?: number | null, volumes?: number | null, genres?: Array<string | null> | null, averageScore?: number | null, popularity?: number | null, siteUrl?: string | null, characters?: { __typename?: 'CharacterConnection', pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null } | null, edges?: Array<{ __typename?: 'CharacterEdge', role?: CharacterRole | null, node?: { __typename?: 'Character', id: number, description?: string | null, gender?: string | null, age?: string | null, bloodType?: string | null, siteUrl?: string | null, name?: { __typename?: 'CharacterName', alternative?: Array<string | null> | null, alternativeSpoiler?: Array<string | null> | null, first?: string | null, full?: string | null, last?: string | null, middle?: string | null, native?: string | null, userPreferred?: string | null } | null, image?: { __typename?: 'CharacterImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null, staff?: { __typename?: 'StaffConnection', edges?: Array<{ __typename?: 'StaffEdge', role?: string | null, node?: { __typename?: 'Staff', id: number, description?: string | null, primaryOccupations?: Array<string | null> | null, gender?: string | null, age?: number | null, siteUrl?: string | null, name?: { __typename?: 'StaffName', full?: string | null, native?: string | null } | null, image?: { __typename?: 'StaffImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null, studios?: { __typename?: 'StudioConnection', edges?: Array<{ __typename?: 'StudioEdge', node?: { __typename?: 'Studio', id: number, name: string, isAnimationStudio: boolean, siteUrl?: string | null } | null } | null> | null } | null, title?: { __typename?: 'MediaTitle', romaji?: string | null, english?: string | null, native?: string | null } | null, coverImage?: { __typename?: 'MediaCoverImage', large?: string | null, medium?: string | null } | null, startDate?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null, endDate?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null };
+export type GetAnimeByIdQuery = { __typename?: 'Query', Media?: { __typename?: 'Media', id: number, description?: string | null, format?: MediaFormat | null, status?: MediaStatus | null, episodes?: number | null, chapters?: number | null, volumes?: number | null, genres?: Array<string | null> | null, averageScore?: number | null, popularity?: number | null, siteUrl?: string | null, characters?: { __typename?: 'CharacterConnection', edges?: Array<{ __typename?: 'CharacterEdge', role?: CharacterRole | null, node?: { __typename?: 'Character', id: number, description?: string | null, gender?: string | null, age?: string | null, bloodType?: string | null, siteUrl?: string | null, name?: { __typename?: 'CharacterName', alternative?: Array<string | null> | null, alternativeSpoiler?: Array<string | null> | null, first?: string | null, full?: string | null, last?: string | null, middle?: string | null, native?: string | null, userPreferred?: string | null } | null, image?: { __typename?: 'CharacterImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null, staff?: { __typename?: 'StaffConnection', edges?: Array<{ __typename?: 'StaffEdge', role?: string | null, node?: { __typename?: 'Staff', id: number, description?: string | null, primaryOccupations?: Array<string | null> | null, gender?: string | null, age?: number | null, siteUrl?: string | null, name?: { __typename?: 'StaffName', full?: string | null, native?: string | null } | null, image?: { __typename?: 'StaffImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null, studios?: { __typename?: 'StudioConnection', edges?: Array<{ __typename?: 'StudioEdge', node?: { __typename?: 'Studio', id: number, name: string, isAnimationStudio: boolean, siteUrl?: string | null } | null } | null> | null } | null, title?: { __typename?: 'MediaTitle', romaji?: string | null, english?: string | null, native?: string | null } | null, coverImage?: { __typename?: 'MediaCoverImage', large?: string | null, medium?: string | null } | null, startDate?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null, endDate?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null };
 
 export type GetAnimeByTitleQueryVariables = Exact<{
   title?: InputMaybe<Scalars['String']['input']>;
@@ -4709,10 +4707,12 @@ export type GetAnimeByTitleQuery = { __typename?: 'Query', Page?: { __typename?:
 
 export type GetAnimeCharactersQueryVariables = Exact<{
   id?: InputMaybe<Scalars['Int']['input']>;
+  page?: InputMaybe<Scalars['Int']['input']>;
+  perPage?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
-export type GetAnimeCharactersQuery = { __typename?: 'Query', Media?: { __typename?: 'Media', characters?: { __typename?: 'CharacterConnection', edges?: Array<{ __typename?: 'CharacterEdge', role?: CharacterRole | null, node?: { __typename?: 'Character', id: number, description?: string | null, gender?: string | null, age?: string | null, bloodType?: string | null, siteUrl?: string | null, name?: { __typename?: 'CharacterName', alternative?: Array<string | null> | null, alternativeSpoiler?: Array<string | null> | null, first?: string | null, full?: string | null, last?: string | null, middle?: string | null, native?: string | null, userPreferred?: string | null } | null, image?: { __typename?: 'CharacterImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null } | null };
+export type GetAnimeCharactersQuery = { __typename?: 'Query', Media?: { __typename?: 'Media', characters?: { __typename?: 'CharacterConnection', pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null } | null, edges?: Array<{ __typename?: 'CharacterEdge', role?: CharacterRole | null, node?: { __typename?: 'Character', id: number, description?: string | null, gender?: string | null, age?: string | null, bloodType?: string | null, siteUrl?: string | null, name?: { __typename?: 'CharacterName', alternative?: Array<string | null> | null, alternativeSpoiler?: Array<string | null> | null, first?: string | null, full?: string | null, last?: string | null, middle?: string | null, native?: string | null, userPreferred?: string | null } | null, image?: { __typename?: 'CharacterImage', large?: string | null, medium?: string | null } | null, dateOfBirth?: { __typename?: 'FuzzyDate', year?: number | null, month?: number | null, day?: number | null } | null } | null } | null> | null } | null } | null };
 
 export type GetAnimeListByGenreQueryVariables = Exact<{
   genre: Scalars['String']['input'];
@@ -5200,13 +5200,10 @@ export const UserFragmentFragmentDoc = gql`
 }
     `;
 export const GetAnimeByIdDocument = gql`
-    query GetAnimeById($id: Int, $page: Int = 1, $perPage: Int = 25) {
+    query GetAnimeById($id: Int) {
   Media(id: $id, type: ANIME) {
     ...MediaFragment
-    characters(page: $page, perPage: $perPage) {
-      pageInfo {
-        hasNextPage
-      }
+    characters {
       edges {
         role
         node {
@@ -5245,9 +5242,12 @@ export const GetAnimeByTitleDocument = gql`
 }
     ${MediaFragmentFragmentDoc}`;
 export const GetAnimeCharactersDocument = gql`
-    query GetAnimeCharacters($id: Int) {
+    query GetAnimeCharacters($id: Int, $page: Int = 1, $perPage: Int = 25) {
   Media(id: $id, type: ANIME) {
-    characters {
+    characters(page: $page, perPage: $perPage) {
+      pageInfo {
+        hasNextPage
+      }
       edges {
         role
         node {
