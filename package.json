@@ -47,7 +47,7 @@
   ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepublishOnly": "bun run build",
+    "prepare": "bun run build",
     "codegen": "rimraf src/__generated__ && graphql-codegen --config codegen.yml",
     "test": "bun test"
   },
